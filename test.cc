@@ -16,6 +16,7 @@ int main(int argc, char **argv)
 		digits  = std::atoi(argv[1]);
 
 	double bigM = raise(digits);
+	std::cout<<"M/m = "<<bigM<<std::endl;
 	Environment env(bigM);
 	while (env.nextState());
 	std::cout<<"num of collisions "<<env.EventsList.size()<<std::endl;

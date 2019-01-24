@@ -5,16 +5,15 @@ class State;
 class Event
 {
 	public:
-		Event(State *state)
-		{}
+		double clock;
+		Event(State *state);
 		virtual ~Event()
 		{}
 };
 class State
 {
-	protected:
-		double clock;
 	public:
+		double clock;
 		State()
 			: clock(0)
 		{}
@@ -22,4 +21,6 @@ class State
 		{}
 		virtual bool nextState()=0;
 };
+Event::Event(State *state) : clock(state->clock)
+{}
 #endif
